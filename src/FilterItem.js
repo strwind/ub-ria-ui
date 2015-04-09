@@ -403,7 +403,9 @@ define(function (require) {
             'lastItem': this.lastSelectedItem,
             'action': isChecked ? 'remove' : 'add'
         });
-        this.lastSelectedItem = selectedItem;
+        if (this.multiple || !isChecked) {
+            this.lastSelectedItem = selectedItem;
+        }
     };
     
     /**
